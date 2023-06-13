@@ -1,0 +1,39 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">NotesWEBApi</a>
+</nav>
+<div class="d-flex flex-column justify-content-center">
+    <h3 class="text-center">Реєстрація</h3>
+    <form [formGroup]="registrationForm" class="registration-form">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" formControlName="name">
+            <div *ngIf="registrationForm.controls['name'].touched && registrationForm.controls['name'].errors">
+                <div *ngIf="registrationForm.controls['name'].errors['required']">Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Surname</label>
+            <input type="text" formControlName="surname">
+            <div *ngIf="registrationForm.controls['surname'].touched && registrationForm.controls['surname'].errors">
+                <div *ngIf="registrationForm.controls['surname'].errors['required']">Surname is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" formControlName="email">
+            <div *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].errors">
+                <div *ngIf="registrationForm.controls['email'].errors['required']">Email is required</div>
+                <div *ngIf="registrationForm.controls['email'].errors['email']">Invalid email</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" formControlName="password">
+            <div *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].errors">
+                <div *ngIf="registrationForm.controls['password'].errors['required']">Password is required</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary" (click)="register()">Register</button>
+        <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+    </form>
+</div>

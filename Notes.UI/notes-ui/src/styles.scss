@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body
+{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(212,213,255);
+  background: linear-gradient(90deg, rgba(212,213,255,1) 15%, rgba(119,121,255,1) 41%, rgba(89,90,255,1) 63%, rgba(50,52,255,1) 82%, rgba(0,1,156,1) 100%);
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+.login-form,
+.registration-form {
+  border: none !important;
+}
